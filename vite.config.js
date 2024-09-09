@@ -14,4 +14,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
+  // css: {
+  //   preprocessorOptions: {
+  //     less: {
+  //       modifyVars: {
+  //         hack: `true; @import (reference) "${path.resolve('src/assets/base.less')}";`
+  //       },
+  //       javascriptEnabled: true
+  //     }
+  //   }
+  // }
 })

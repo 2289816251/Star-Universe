@@ -1,12 +1,14 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { reactive, onMounted } from 'vue'
+import { RouterView } from "vue-router";
+import Header from "./components/Header/index.vue";
+
+
 </script>
 
 <template>
-  <h1>Vue3改变世界</h1>
+  <Header></Header>
   <RouterView />
-  <img src="@/assets/images/loading.gif" alt="">
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
