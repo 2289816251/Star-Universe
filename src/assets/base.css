@@ -19,6 +19,10 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  /* 主色 */
+  --main-color: #1677ff;
+  /* 辅助色 */
+  --secondary-color: #4096ff;
 }
 
 /* semantic color variables for this project */
@@ -32,6 +36,9 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+
+  --color-button: var(--main-color);
+  --color-button-hover: var(--secondary-color);
 
   --section-gap: 160px;
 }

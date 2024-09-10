@@ -47,6 +47,6 @@ export default [
     // 重定向 在项目跑起来的时候 访问“/”的时候 定位在主页
     {
         path: '/',
-        redirect: '/home'
+        redirect: '/shop'
     }
 ]

@@ -13,7 +13,9 @@
           </div>
           <div class="title">
             <span>Star Universe</span>
-            <span>{{ AWordFromTheHeart[getRandomText()].text }}</span>
+            <span v-if="homeStore.AWordFromTheHeart">{{
+              homeStore.AWordFromTheHeart.text
+            }}</span>
           </div>
         </div>
       </a-col>
@@ -25,23 +27,23 @@
             align="middle"
             :gutter="{ xs: 24, sm: 24, md: 24, lg: 24 }"
           >
-            <!-- 
-      :sm="item.path.search(active.split('/')[1]) >= 1 ? 24 : 0" -->
             <a-col
               align="center"
               v-for="(item, index) in navList"
               :key="index"
-              :xs="24 / navList.length"
+              :sm="item.path.search(activeNav.split('/')[1]) >= 1 ? 24 : 0"
+              :xs="item.path.search(activeNav.split('/')[1]) >= 1 ? 24 : 0"
               :md="24 / navList.length"
               :xl="24 / navList.length"
               flex
             >
-            <!-- {{ item.path.search(active.split('/')[1]) >= 1 ? 24 : 0 }} -->
-              <!-- :class="item.path == active ? 'active' : ''"
-          @click.prevent="changeNav(item.path)" -->
               <!-- 判断是否有子路由 -->
               <template v-if="!item.children">
-                <a href="#" id="a">{{ item.meta.title }}</a>
+                <div :class="activeNav == item.path ? 'active' : ''">
+                  <a href="#" id="a">{{ item.meta.title }}</a>
+                  <p></p>
+                </div>
+                <!-- <a-button type="link">{{ item.meta.title }}</a-button> -->
               </template>
               <!-- 下拉列表 -->
               <!-- <a-dropdown
@@ -108,10 +110,14 @@
 import { h, ref, onMounted } from "vue";
 import { SearchOutlined, HistoryOutlined } from "@ant-design/icons-vue";
 import { useRouter } from "vue-router";
-// 文心一言
-import AWordFromTheHeart from "@/assets/Json/AWordFromTheHeart.json";
+import { useHomeStore } from "@/stores/home";
 
+const homeStore = useHomeStore();
 const router = new useRouter();
+
+let activeNav = router.options.history.location
+  ? router.options.history.location
+  : "/home"; // 当前激活的菜单
 // 存储导航列表
 let navList = ref();
 // 获取导航列表
@@ -119,17 +125,10 @@ const getNavList = function () {
   const routers = router.options.routes;
   navList.value = routers.filter((e) => e.meta !== undefined && e.meta.nav);
 };
-// 获取随机文心一言
-const getRandomText = function () {
-  // 计算范围内的随机数
-  let random = Math.random() * ((AWordFromTheHeart.length - 1) - 0 + 1);
-  // 向下取整得到整数
-  let randomNumber = Math.floor(random);
-  // 返回随机数
-  return randomNumber;
-};
+
 onMounted(() => {
   getNavList();
+  homeStore.getAWordFromTheHeart();
 });
 </script>
 
@@ -160,12 +159,49 @@ onMounted(() => {
       span {
         padding-left: 8px;
         color: var(--color-text);
+        &:last-child {
+          font-size: 10px;
+        }
         &:first-child {
           font-size: 16px;
           font-weight: 600;
         }
-        &:last-child {
-          font-size: 10px;
+      }
+    }
+  }
+  .nav {
+    // background-color: red;
+    .ant-row {
+      .ant-col {
+        div {
+          position: relative;
+          a {
+            // background-color: red;
+            color: var(--color-borde);
+            &:hover {
+              color: var(--color-button);
+            }
+          }
+          p {
+            position: absolute;
+          }
+          &.active {
+            a {
+              color: var(--color-button-hover);
+              font-weight: 600;
+            }
+            p {
+              left: 40%;
+              // top: 0;
+              right: 40%;
+              bottom: -28px;
+              width: 20%;
+              height: 4px;
+              border-radius: 25%;
+              background-color: var(--main-color);
+              box-shadow: 0 -6px 20px var(--secondary-color);
+            }
+          }
         }
       }
     }
