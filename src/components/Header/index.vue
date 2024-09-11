@@ -184,6 +184,7 @@ onMounted(() => {
           }
           p {
             position: absolute;
+            transition: all 0.3s;
           }
           &.active {
             a {

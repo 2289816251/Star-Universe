@@ -9,7 +9,7 @@ const router = createRouter({
 // 前置路由守卫
 router.beforeEach((to, from, next) => {
   // 设置页面标题
-  document.title = to.meta.title
+  document.title = 'Star-Universe - ' + to.meta.title
   next()
 })
 
