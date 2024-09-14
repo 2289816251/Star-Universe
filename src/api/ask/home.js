@@ -1,6 +1,6 @@
 import request from '../request'
 
-// 获取分类数据数据
+// 获取文心一言
 function getAWordFromTheHeart () {
     return request({
         method:'get',

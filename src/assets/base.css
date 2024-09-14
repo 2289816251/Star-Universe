@@ -23,6 +23,7 @@
   --main-color: #1677ff;
   /* 辅助色 */
   --secondary-color: #4096ff;
+  --text-describe: #dfdfdf;
 }
 
 /* semantic color variables for this project */
@@ -41,9 +42,7 @@
   --color-button-hover: var(--secondary-color);
 
   --section-gap: 160px;
-  --mx-width:1280px;
-  --ct-border-radius-8: 8px;
-  --ct-border-radius-16: 16px;
+  
   --shadow-color: 0deg 0% 75%;
   --shadow-elevation-low:
     0.5px 0.5px 0.6px hsl(var(--shadow-color) / 0.37),

@@ -1,0 +1,7 @@
+:root{
+    --mx-width:1280px;
+    --ct-border-radius-4: 4px;
+    --ct-border-radius-8: 8px;
+    --ct-border-radius-16: 16px;
+    --layout-grid: 16px;
+}

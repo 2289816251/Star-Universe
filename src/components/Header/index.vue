@@ -152,6 +152,10 @@ onMounted(() => {
     .logo {
       width: @logoSize;
       height: @logoSize;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
     .title {
       display: flex;

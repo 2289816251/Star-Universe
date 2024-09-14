@@ -1,0 +1,50 @@
+[
+    {
+        "id":0,
+        "title":"成品老号-独享",
+        "describe":"已购小火箭APP",
+        "label":["老号","稳定"],
+        "imageUrl":"https://i.ibb.co/k9sSsHD/image.jpg",
+        "classId":"08K0HJ80",
+        "state":1,
+        "sales":21,
+        "inStock": 99,
+        "price":32.99
+    },
+    {
+        "id":1,
+        "title":"成品老号-租凭",
+        "describe":"已购小火箭APP",
+        "label":["老号","稳定"],
+        "imageUrl":"https://i.ibb.co/k9sSsHD/image.jpg",
+        "classId":"08K0HJ80",
+        "state":1,
+        "sales":65,
+        "inStock": 99,
+        "price":8.88
+    },
+    {
+        "id":2,
+        "title":"成品老号-测试",
+        "describe":"已购小火箭APP",
+        "label":["老号","稳定"],
+        "imageUrl":"https://i.ibb.co/k9sSsHD/image.jpg",
+        "classId":"9HI0FUT1",
+        "state":1,
+        "sales":21,
+        "inStock": 99,
+        "price":8.88
+    },
+    {
+        "id":3,
+        "title":"成品老号-独享",
+        "describe":"已购小火箭APP",
+        "label":["老号","稳定"],
+        "imageUrl":"https://i.ibb.co/k9sSsHD/image.jpg",
+        "classId":"9HI0FUT1",
+        "state":1,
+        "sales":21,
+        "inStock": 99,
+        "price":32.99
+    }
+]
